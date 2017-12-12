@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+        }
+        html,body{
+            height:100%;
+        }
+        a{
+            color:#333;
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+
+        /*头部*/
+        .header{
+            height:60px;
+            background: #F5F8FA;
+        }
+
+        .mod-act-group{
+            float: right;
+            margin-right:68px;
+        }
+        .mod-act-group .info {
+            float: left;
+            line-height: 60px;
+            font-size:14px;
+            text-align: center;
+            padding:0 5px;
+        }
+
+        .text-orange{
+            color:#FF9805;
+        }
+        .logo{
+            height:100%;
+            overflow: hidden;
+            float: left;
+        }
+        .logo a{
+            display: block;
+            background: url(img/logo.jpg);
+            width: 100px;
+            height:40px;
+            margin-top:10px;
+            margin-left:53px;
+        }
+
+        .mod-act{
+            float: left;
+            height:100%;
+            margin-left:105px;
+            margin-top:12px;
+        }
+        .mod-act a{
+            position: relative;
+            display: block;
+            width: 34px;
+            height: 34px;
+            border-radius: 2px;
+            text-align: center;
+            background: #E9EEF3;
+            border: 1px solid transparent;
+            font-size:14px;
+            line-height: 34px;
+            text-align: center;
+        }
+        .mod-act a:hover{
+            border-color: #ccc;
+        }
+
+        .mod-search{
+            height:36px;
+            float: left;
+            margin-left:16px;
+            margin-top:12px;
+            position: relative;
+        }
+        .mod-search input{
+            height:34px;
+            width:200px;
+            border:1px solid transparent;
+            padding:0 40px 0 10px;
+            background: #E9EEF3;
+        }
+        .mod-search a{
+            position: absolute;
+            width:36px;
+            height:36px;
+            text-align: center;
+            line-height: 36px;
+            right:0;
+            top:0;
+        }
+
+        /*主体*/
+        .main{
+            /*background: orchid;*/
+            position: absolute;
+            top:60px;
+            left:0;
+            right:0;
+            bottom:0;
+        }
+
+        .main .side{
+            height:100%;
+            position: absolute;
+            width:200px;
+            top:0;
+            left:0;
+        }
+        .main .content{
+            padding:0 0 0 200px;
+            position: relative;
+            height:100%;
+        }
+
+        .side-heading .ava{
+            display: block;
+            width: 58px;
+            height: 58px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 29px;
+            margin-top:16px;
+        }
+        .side-heading .ava img{
+            width: 100%;
+            height: 100%;
+        }
+        .side-body{
+            margin-top:16px;
+            overflow: auto;
+            height:400px;
+        }
+        .side-body .btns{
+            text-align: center;
+        }
+        .side-body .btns .btn{
+            display: inline-block;
+            text-align: center;
+            border-radius:2px;
+            width:80px;
+            height:25px;
+            line-height: 25px;
+            color:#00A4FF;
+            border:1px solid #00A4FF;
+        }
+        .side-body .btns .btn:hover{
+            background-color:rgba(59,147,255,.1);
+            text-decoration: none;
+        }
+        .side-body ul{
+            width:100px;
+            border-bottom:1px solid #ccc;
+            margin:16px auto -1px;
+            list-style: none;
+
+        }
+        .side-body ul li{
+
+        }
+        .side-body li a{
+            display: block;
+            width:100px;
+            margin-left:-40px;
+            height:38px;
+            line-height: 38px;
+            border-left:4px solid transparent;
+            padding-left:36px;
+            padding-right:50px;
+            text-indent:8px;
+        }
+        .side-body li a:hover{
+            text-decoration: none;
+            background-color:rgba(59,147,255,.1) ;
+        }
+        .side-body li a.active,
+        .side-body li a.active:hover{
+            color:#0097EB;
+            text-decoration: none;
+            border-left:4px solid #0097EB;
+            background-color:transparent;
+        }
+
+        .main .center {
+            padding:0 70px 0 30px;
+            height:100%;
+        }
+
+        .main .center .crumbs{
+            height:60px;
+            line-height: 60px;
+            font-family: "Comic Sans MS";
+
+        }
+        .main .center .crumbs .crumbs-btn{
+            float: left;
+            height:100%;
+        }
+
+        .main .center .crumbs .btns{
+            float: right;
+        }
+        .main .center .crumbs .btns .btn{
+            display: inline-block;
+            padding:5px 20px;
+            border:1px solid #ccc;
+            line-height: normal;
+            border-radius:2px;
+            margin:0 5px;
+        }
+        .main .center .crumbs .btns .btn:hover{
+            text-decoration: none;
+            background-color:rgba(59,147,255,.1);
+        }
+
+        .main .center .crumbs .btns .btn-primary{
+            background-color: #00A4FF;
+            color:#fff;
+            border-color:transparent;
+        }
+
+        .main .center .crumbs .btns .btn-primary:hover{
+            background-color:#0097EA;
+        }
+
+        .list {
+
+        }
+
+        .list-item{
+            /*background-color: red;*/
+            height:40px;
+            line-height: 40px;
+            text-align: left;
+            border-bottom:1px solid #ccc;
+        }
+        .list-item .name{
+            position: relative;
+            padding-right:300px;
+        }
+        .list-item .edit-time{
+            position: absolute;
+            right:150px;
+            top:0;
+            width:150px;
+        }
+        .list-item .file-size{
+            position: absolute;
+            right:0px;
+            top:0;
+            width:150px;
+        }
+
+        .list-con{
+            margin-left:100px;
+            height:50px;
+            line-height:50px;
+        }
+
+        .list-con a{
+            display: block;
+            margin-left:-100px;
+        }
+        .list-con a:hover{
+            background-color: rgba(59,147,255,.1);
+            text-decoration: none;
+        }
+
+        .list-con .check-box,
+        .list-con .file{
+            float: left;
+            width:50px;
+            text-align: center;
+            font-size:18px;
+        }
+
+        .list-con .check-box{
+            width:30px;
+        }
+        .list-con .file{
+            width:70px;
+            font-size:28px;
+            color:#4FB2FC;
+        }
+
+
+        .thumb .list-con{
+            float: left;
+            border-color:transparent;
+            width:114px;
+            height:130px;
+            padding:0;
+            margin:0;
+            position: relative;
+        }
+        .thumb .list-con a{
+            margin:0;
+            padding-bottom:20px;
+        }
+        .thumb .list-header{
+            display: none;
+        }
+        .thumb .list-con .check-box{
+            position: absolute;
+            top:-8px;
+            left:-2px;
+            display: none;
+            color:#ccc;
+        }
+        .thumb .list-con a:hover .check-box{
+            display: block;
+        }
+        .thumb .list-con .name{
+            padding:0;
+            text-align: center;
+            line-height: 20px;
+        }
+        .thumb .list-con .file{
+            width:100%;
+            margin-top:10px;
+            height:70px;
+            line-height: 70px;
+            text-align: center;
+            font-size:56px;
+        }
+
+        .thumb .list-con .file-size,
+        .thumb .list-con .edit-time{
+            display: none;
+        }
+
+        .all{
+            display: none;
+        }
+
+
+
+
+        ::-webkit-scrollbar {
+            width: 16px;
+            height: 10px;
+            overflow: visible;
+        }
+        ::-webkit-scrollbar-button {
+            width: 0;
+            height: 0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #d8dce5;
+            border: solid transparent;
+            border-width: 1px 0 1px 8px;
+            background-clip: padding-box;
+        }
+
+        .icon{
+            font-size:18px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        /*清浮动*/
+        .clearFix{
+            display: block;
+        }
+        .clearFix:before{
+            display: block;
+            content:'';
+        }
+        .clearFix:after{
+            display: block;
+            content:'';
+            clear:both;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<!--写结构 不用考虑其他因素-->
+
+
+<!--头部-->
+<div class="header clearFix">
+    <div class="mod-act-group">
+        <div class="info text-orange">开会员最多送一年</div>
+        <div class="info"><a href="#">下载客户端</a></div>
+        <div class="info"><a href="#">evear <i class="fa fa-sort-desc"></i></a></div>
+    </div>
+    <div class="logo"><a href="#"></a></div>
+    <div class="mod-act"><a href="javascript:;"><i class="fa fa-download"></i></a></div>
+    <div class="mod-search">
+        <input type="text" value="" placeholder="搜索全部微云" >
+        <a href="#"><i class="fa fa-search"></i></a>
+    </div>
+</div>
+
+
+<!--主体-->
+<div class="main">
+    <div class="content">
+        <div class="center">
+
+            <!--面包屑-->
+            <div class="crumbs">
+                <div class="btns">
+                    <a href="#" class="btn"><i class="fa fa-bars"></i> <i class="fa fa-sort-down"></i></a>
+                    <a href="#" class="btn btn-primary"><i class="fa fa-plus"></i> <span>添加</span></a>
+                </div>
+                <div class="crumbs-btn">
+                    <span class="icon all"><i class="fa fa-circle-o "></i> | </span><a href="#">全部</a> &gt; <a href="#">QQ网盘</a>
+                </div>
+            </div>
+
+            <div class="list clearFix">
+
+                <div class="list-item list-header">
+                    <div class="name">
+
+                        <div style="">名称 <i class="fa fa-sort-amount-desc"></i></div>
+
+                        <div class="edit-time">修改时间 <i class="fa fa-sort-amount-desc"></i></div>
+                        <div class="file-size">大小</div>
+                    </div>
+
+
+                </div>
+                <div class="list-content">
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+        <!--左翅膀-->
+        <div class="side">
+            <div class="side-heading">
+                <a href="#" class="ava"><img src="https://thirdqq.qlogo.cn/g?b=sdk&k=RyDCpmzwYOPrGOZnRCpI6Q&s=640&t=1483317506" alt=""></a>
+            </div>
+            <div class="side-body">
+                <div class="btns">
+                    <a class="btn" href="#">开通</a>
+                </div>
+                <div class="menu clearFix">
+
+                </div>
+                <div class="footer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--请求的数据-->
+<script src="js/data.js"></script>
+
+<!--生成结构的js-->
+<script src="js/template.js"></script>
+
+<!--操作元素的公共方法-->
+<script src="js/common.js"></script>
+
+
+
+
+<script>
+    //定义默认显示的内容
+    var defaultContent = 'zj';
+
+    //当前内容关键字
+    var currMark = 'zj';
+
+    //右侧内容的盒子
+    var contentBox = document.querySelector('.list-content');
+
+
+    //给当前页面生成侧栏菜单
+    createMenu(menu,document.querySelector('.menu'));
+
+    //生成默认显示的右侧内容
+    createContent(content[defaultContent],contentBox);
+
+
+    //获取左侧菜单
+    var sideMenu = document.querySelectorAll('.menu li a');
+    //根据默认数据标记当前显示的是那一条菜单的内容
+    var currMarkDom =  markSideMenu(sideMenu,defaultContent);
+
+    //菜单的点击事件 （切换右侧内容）
+    for(var i=0;i<sideMenu.length;i++){
+        sideMenu[i].onclick = function(){
+
+            currMark = this.getAttribute('mark');
+
+            //显示对应内容
+            createContent(content[currMark],contentBox);
+
+            addClick();
+            //标记
+            currMarkDom.className = '';
+            currMarkDom = markSideMenu(sideMenu,currMark);
+        };
+    }
+
+    //内容列表的点击事件
+    addClick();
+    function addClick(){
+        var contentList = document.querySelectorAll('.list-content a');
+        console.log(contentList);
+        for(var i=0;i<contentList.length;i++){
+            contentList[i].onclick = function(){
+                //显示子集内容
+                //找对应要显示的列表？
+                createContent(content[currMark][this.getAttribute('mark')].child,contentBox);
+                addClick();
+            };
+        }
+    }
+
+    /*
+    *
+    * 1.思考： 如果有第三层 如何实现显示内容的效果
+    *
+    *
+    *
+    *
+    * */
+
+
+</script>
+
+
+</body>
+</html>
